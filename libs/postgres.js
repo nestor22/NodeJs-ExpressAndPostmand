@@ -1,4 +1,8 @@
-const { client, Client } = require('pg');
+const { Client } = require('pg');
+
+
+
+
 async function getConnection() {
 
   const client = new Client({
