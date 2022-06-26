@@ -5,5 +5,5 @@ function setupModels(sequelize){
 
 }
 
-module.export = setupModels;
+module.exports = setupModels;
 
