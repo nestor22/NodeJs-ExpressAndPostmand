@@ -1,0 +1,7 @@
+module.exports = {
+  'config': './db/config.js',
+  'models-parths': './db/models/',
+  'migrations-parths': './db/migrations/',
+  'seeders-parths': './db/seeders/',
+
+}
