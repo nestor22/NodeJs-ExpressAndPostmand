@@ -1,7 +1,6 @@
 const faker = require('faker');
 const boom = require('@hapi/boom');
 
-const sequilizer = require('../libs/sequelize');
 
 class ProductsService {
   constructor() {
