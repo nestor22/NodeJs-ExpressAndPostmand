@@ -9,7 +9,7 @@ const CategorySchema = {
     primaryKey: true,
     type: DataTypes.INTEGER
   },
-  name: {
+name: {
     type: DataTypes.STRING,
     unique: true,
     allowNull: false,
@@ -29,7 +29,7 @@ const CategorySchema = {
 
 class Category extends Model {
   static associate(models){
-    this.hasMany(models.Product, {
+    this.hasMany(models.Products, {
       as: 'products',
       foreignKey: 'categoryId' // atributo del modelo
     })
