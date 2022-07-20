@@ -1,3 +1,4 @@
+const { isRef } = require('joi');
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const { CUSTOMER_TABLE } = require('./customer.model')
 const ORDER_TABLE = 'orders';
@@ -25,6 +26,17 @@ const OrderSchema = {
     type: DataTypes.DATE,
     field: 'created_at',
     defaultValue: Sequelize.NOW
+  },
+  total:{
+    type: DataTypes.VIRTUAL,
+    get(){
+      if(this.items.length > 0){
+        return this.items.reduce((total, item) => {
+          return total + (item.price * item.OrderProduct.ammount)
+        }, 0)
+      }
+      return 0;
+    }
   }
 }
 
