@@ -41,9 +41,11 @@ class ProductsService {
       options.offset = offset;
 
     }
+    if(price){
+      options.where.price = price;
+    }
 
     const products = await models.Product.findAll(options)
-
     return products
   }
 
